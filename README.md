@@ -10,7 +10,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Tests](https://img.shields.io/badge/Tests-53%20cases-brightgreen.svg)](tests/)
 
-[English](#english) · [功能](#-功能简介) · [快速开始](#-快速开始) · [命令详解](#-命令总览) · [参考文档](#-参考文档)
+[功能](#-功能简介) · [快速开始](#-快速开始) · [命令详解](#-命令总览) · [参考文档](#-参考文档)
 
 </div>
 
