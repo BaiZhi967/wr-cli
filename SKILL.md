@@ -17,13 +17,13 @@ CLI 已内置：鉴权、`skill_version` 版本上报、errcode/upgrade_info 检
 WR_CLI=scripts/weread.py
 
 # 所有数据命令均支持 --output/-o 导出
-$WR_CLI search <关键词> [--scope 10] [--page 1] [--per-page 10] [-o result.json]
+$WR_CLI search <关键词> [--scope 10] [--count 20] [--page 1] [--per-page 10] [-o result.json]
 $WR_CLI shelf [--page 1] [--per-page 10] [-o shelf.csv]
 $WR_CLI book <bookId> [--progress] [--chapters] [--chapters-page 1] [-o book.json]
 $WR_CLI notes [--book <bookId>] [--page 1] [--per-page 10] [--max-pages 5] [-o notes.tsv]
-$WR_CLI readdata [--mode monthly|weekly|annually|overall] [--time 0] [-o stats.json]
-$WR_CLI review <bookId> [--type 0] [--per-page 10] [-o reviews.md]
-$WR_CLI discover [--book <bookId>] [--per-page 10] [-o discover.csv]
+$WR_CLI readdata [-m monthly|weekly|annually|overall] [-t 0] [-o stats.json]
+$WR_CLI review <bookId> [--type 0] [--page 1] [--per-page 10] [-o reviews.md]
+$WR_CLI discover [--book <bookId>] [--page 1] [--per-page 10] [-o discover.csv]
 $WR_CLI list-apis
 ```
 
@@ -183,7 +183,20 @@ API 字段含义和工作流细节，CLI 已实现，仅供理解参考：
 .
 ├── SKILL.md                  # 本文件
 ├── scripts/
-│   └── weread.py             # 单文件 CLI（~1170 行）
+│   ├── weread.py             # 入口
+│   └── _weread/
+│       ├── api.py            # API 客户端（鉴权、版本上报、错误处理）
+│       ├── cli.py            # 命令行参数解析
+│       ├── constants.py      # API 地址与版本号
+│       ├── utils.py          # 工具函数（时间格式化、深链生成等）
+│       ├── export.py         # 多格式导出
+│       ├── search.py         # 搜索
+│       ├── shelf.py          # 书架
+│       ├── book.py           # 书籍
+│       ├── notes.py          # 笔记
+│       ├── readdata.py       # 阅读数据
+│       ├── review.py         # 书评
+│       └── discover.py       # 发现/推荐
 ├── references/               # API 字段参考文档
 │   ├── search.md
 │   ├── shelf.md

@@ -87,25 +87,25 @@ python scripts/weread.py notes --book 834464 -o notes.md
 WR_CLI=scripts/weread.py
 
 # 搜索：支持电子书、有声书、作者等 scope
-$WR_CLI search <关键词> [--scope 10] [--page 1] [--per-page 10] [-o result.json]
+$WR_CLI search <关键词> [--scope 10] [--count 20] [--page 1] [--per-page 10] [-o result.json]
 
 # 书架：含书籍、有声书、公众号分组计数
 $WR_CLI shelf [--page 1] [--per-page 10] [-o shelf.csv]
 
 # 书籍：详情 + 目录 + 阅读进度
-$WR_CLI book <bookId> [--progress] [--chapters] [-o book.json]
+$WR_CLI book <bookId> [--progress] [--chapters] [--chapters-page 1] [-o book.json]
 
 # 笔记：划线 + 想法 + 书签
 $WR_CLI notes [--book <bookId>] [--page 1] [--per-page 10] [--max-pages 5] [-o notes.tsv]
 
 # 阅读统计：周报/月报/年报/总计
-$WR_CLI readdata [--mode monthly|weekly|annually|overall] [--time 0] [-o stats.json]
+$WR_CLI readdata [-m monthly|weekly|annually|overall] [-t 0] [-o stats.json]
 
 # 公开点评
-$WR_CLI review <bookId> [--type 0] [--per-page 10] [-o reviews.md]
+$WR_CLI review <bookId> [--type 0] [--page 1] [--per-page 10] [-o reviews.md]
 
 # 推荐 / 相似书籍
-$WR_CLI discover [--book <bookId>] [--per-page 10] [-o discover.csv]
+$WR_CLI discover [--book <bookId>] [--page 1] [--per-page 10] [-o discover.csv]
 
 # 列出可用接口
 $WR_CLI list-apis
