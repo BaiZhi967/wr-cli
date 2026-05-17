@@ -29,6 +29,16 @@
 
 wr-cli 将这些逻辑固化到代码中，agent 只需执行一行命令即可完成「调用 → 处理 → 格式化 → 导出」的全流程。
 
+### 与 weread-skills 对比
+
+<img src="01.jpg" width="600" />
+
+<img src="02.jpg" width="600" />
+
+<img src="03.jpg" width="600" />
+
+<img src="04.jpg" width="600" />
+
 ## ✨ 功能简介
 
 8 个子命令，覆盖微信读书主要数据接口：
